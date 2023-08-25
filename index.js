@@ -1,4 +1,5 @@
-
+const menubar = document.querySelector('.menubar');
+            const menuItems = menubar.querySelectorAll('a');
 const btn = document.getElementsByClassName('humbarger')[0];
 const container = document.getElementsByClassName('container');
 const about = document.getElementById('about');
@@ -20,7 +21,11 @@ const navbar = document.querySelectorAll('#header .menubar>li>a');
 const arrow = document.getElementById('arrow');
 
 
-
+for (const menuItem of menuItems) {
+    menuItem.addEventListener('click', () => {
+        menubar.classList.remove('showNav');
+    });
+}
 //show Navbar
 const showNavbar=()=>{
     const target = document.querySelector('.menubar').classList.toggle('showNav');
